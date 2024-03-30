@@ -25,6 +25,16 @@
             <li v-for="todo in todos"> {{ todo.text }}</li>
         </ol>
     </div>
+    <br>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="reverse">Reverse Message</button>
+    </div>
+    <br>
+    <div id="app6">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="main.js"></script>

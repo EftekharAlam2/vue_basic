@@ -26,7 +26,26 @@ var app4 = new Vue ({
             { text: 'Learn HTML' },
             { text: 'Learn CSS' },
             { text: 'Learn JavaScript' },
-            { text: 'Learn Vue js' }
+            { text: 'Learn Vue.js' }
         ]
+    }
+})
+
+var app5 = new Vue ({
+    el: '#app5',
+    data:{
+        message: 'Hello Vue.js'
+    },
+    methods:{
+        reverse: function (){
+            this.message = this.message.split('').reverse().join('')
+        }
+    }
+})
+
+var app6 = new Vue({
+    el: '#app6',
+    data: {
+        message: "Hello! Change me"
     }
 })
