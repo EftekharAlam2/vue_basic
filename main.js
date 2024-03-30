@@ -27,7 +27,11 @@ var app4 = new Vue ({
             { text: 'Learn CSS' },
             { text: 'Learn JavaScript' },
             { text: 'Learn Vue.js' }
-        ]
+        ],
+        object: {
+            name: 'Eftekhar',
+            age: 23
+        }
     }
 })
 
@@ -68,5 +72,46 @@ var app7 = new Vue ({
             { id: 1, text: 'Vegetables' },
             { id: 2, text: 'Burger' }
         ]
+    }
+})
+
+Vue.component('infoItem', {
+    props: ['title'],
+    template: '\
+    <li>\
+        {{title}}\
+        <button @click="$emit(\'remove\')">Remove</button>\
+    </li>\
+    '
+})
+
+var app8 = new Vue ({
+    el: '#app8',
+    data: {
+        newInfoText: '',
+        infos: [
+            {
+                id: 1,
+                title: 'Do the dishes',
+            },
+            {
+                id: 2,
+                title: 'Take out the trash',
+            },
+            {
+                id: 3,
+                title: 'Mow the lawn'
+            }
+        ],
+        newInfoId: 4,
+    },
+    methods: {
+        newInfoAdd: function(){
+            this.infos.push({
+                id: this.newInfoId++,
+                title: this.newInfoText
+            })
+            this.newInfoText = ''
+        }
     }
 })

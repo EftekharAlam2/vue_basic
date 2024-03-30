@@ -19,12 +19,16 @@
     <br>
     <div id="app3">
         <span v-if="seen">Now you see me</span>
+        <span v-else>Now you won't</span>
     </div>
     <br>
     <div id="app4">
         <ol>
             <li v-for="todo in todos"> {{ todo.text }}</li>
         </ol>
+        <ul>
+            <li v-for="value in object"> {{ value }} </li>
+        </ul>
     </div>
     <br>
     <div id="app5">
@@ -39,7 +43,23 @@
     </div>
     <br>
     <div id="app-7">
-        <todo-item v-for="item in grocery" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        <todo-item v-for="item in grocery" v-bind:todo="item" 
+        v-bind:key="item.id">
+        </todo-item>
+    </div>
+    <br>
+    <div id="app8">
+        <form @submit.prevent="newInfoAdd">
+            <label for="">Add a new Info</label>
+            <input type="text" id="newInfo" v-model="newInfoText"
+            placeholder="Enter new Info">
+            <button type="submit">Add</button>
+        </form>
+        <ul>
+            <li is="infoItem" v-for="(info, index) in infos" :key="info.id"
+            :title="info.title" @remove="infos.splice(index, 1)"
+            ></li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
