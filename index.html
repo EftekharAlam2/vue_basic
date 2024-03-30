@@ -8,6 +8,7 @@
 <body>
     <div id="app">
         {{message}}
+        <p v-once>This message will never change: {{message}}</p>
     </div>
     <br>
     <div id="app2">
@@ -34,6 +35,7 @@
     <div id="app6">
         <p>{{message}}</p>
         <input v-model="message">
+        <p>The computed reversed message is: {{ reversedMessage }}</p>
     </div>
     <br>
     <div id="app-7">

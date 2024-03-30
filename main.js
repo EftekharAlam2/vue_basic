@@ -38,7 +38,7 @@ var app5 = new Vue ({
     },
     methods:{
         reverse: function (){
-            this.message = this.message.split('').reverse().join('')
+            return this.message = this.message.split('').reverse().join('')
         }
     }
 })
@@ -47,6 +47,11 @@ var app6 = new Vue({
     el: '#app6',
     data: {
         message: "Hello! Change me"
+    },
+    computed: {
+        reversedMessage: function(){
+            return this.message.split('').reverse().join('')
+        }
     }
 })
 
