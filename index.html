@@ -35,6 +35,10 @@
         <p>{{message}}</p>
         <input v-model="message">
     </div>
+    <br>
+    <div id="app-7">
+        <todo-item v-for="item in grocery" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="main.js"></script>
